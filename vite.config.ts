@@ -21,7 +21,7 @@ export default defineConfig({
     },
     rollupOptions: {
       input: Object.fromEntries(
-        glob.sync('lib/**/*.{ts,tsx}').map(file => [
+        glob.sync('lib/**/*.{ts,tsx}', { ignore: 'lib/**/*.stories.tsx'}).map(file => [
           // The name of the entry point
           // lib/nested/foo.ts becomes nested/foo
           relative(
